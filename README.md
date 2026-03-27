@@ -8,7 +8,7 @@ PageOne（Pageone-co-ltd）の全リポジトリに適用される Organization 
 | ---------------------------------- | ---------------------------------- |
 | `.github/ISSUE_TEMPLATE/`          | Issue テンプレート（6種類）        |
 | `.github/PULL_REQUEST_TEMPLATE.md` | PR テンプレート                    |
-| `.github/copilot-instructions.md`  | GitHub Copilot 向け組織共通指示     |
+| `.github/copilot-instructions.md`  | GitHub Copilot 向け組織共通指示    |
 
 ## Issue テンプレート一覧
 
@@ -30,17 +30,4 @@ PageOne（Pageone-co-ltd）の全リポジトリに適用される Organization 
 
 ### PR ラベル付与ルール
 
-PR にはブランチ名プレフィックス (例: `impl/`, `infra/` など) に対応するラベルを手動で付与してください。詳細なルールは `.github/copilot-instructions.md` を参照してください。
-
-| ラベル   | 付与する PR の種別             |
-| -------- | ------------------------------ |
-| `impl`   | 機能追加・実装変更             |
-| `infra`  | インフラ・CI/CD 設定変更       |
-| `docs`   | ドキュメントのみの変更         |
-| `bug`    | バグ修正・誤記対応             |
-| `review` | レビュー専用（コード変更なし） |
-| `spike`  | 調査・PoC 結果の取り込み       |
-
-- ラベルは PR 作成時に付与してください。後付けは可ですが、マージ前までに設定すること。
-- 複数の変更種別にまたがる場合は、主となる種別のラベルを 1 つだけ付与してください。
-- `draft` 状態の PR にもラベルを付与してください。
+PR にはブランチ名プレフィックスに対応するラベルを手動で付与してください。詳細なルールは [`.github/copilot-instructions.md`](.github/copilot-instructions.md) を参照してください。
