@@ -2,6 +2,10 @@
 
 PageOne（Pageone-co-ltd）の全リポジトリに適用される Organization 共通テンプレートを管理するリポジトリです。
 
+> **⚠️ このリポジトリは Public です。**
+> 機密情報・案件固有情報・顧客名・設計書・認証情報などを一切コミットしないでください。
+> 詳細は [`.github/copilot-instructions.md`](.github/copilot-instructions.md) を参照してください。
+
 ## 含まれるファイル
 
 | ファイル / ディレクトリ            | 内容                               |
@@ -20,6 +24,14 @@ PageOne（Pageone-co-ltd）の全リポジトリに適用される Organization 
 | `bug.md`    | バグ報告・誤記修正     | `bug`    |
 | `review.md` | レビュー依頼           | `review` |
 | `spike.md`  | 調査・検証             | `spike`  |
+
+## このリポジトリに投入してよい情報
+
+以下のみを対象とします。案件固有情報・機密情報は対象外です。
+
+- Issue テンプレート・PR テンプレート
+- GitHub Copilot 向け組織共通指示ファイル
+- Organization 全体に適用するワークフロー・設定ファイルで、機密情報を一切含まないもの
 
 ## 運用ルール
 
