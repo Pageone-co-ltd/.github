@@ -4,10 +4,11 @@ PageOne（Pageone-co-ltd）の全リポジトリに適用される Organization 
 
 ## 含まれるファイル
 
-| ファイル / ディレクトリ            | 内容                        |
-| ---------------------------------- | --------------------------- |
-| `.github/ISSUE_TEMPLATE/`          | Issue テンプレート（6種類） |
-| `.github/PULL_REQUEST_TEMPLATE.md` | PR テンプレート             |
+| ファイル / ディレクトリ            | 内容                               |
+| ---------------------------------- | ---------------------------------- |
+| `.github/ISSUE_TEMPLATE/`          | Issue テンプレート（6種類）        |
+| `.github/PULL_REQUEST_TEMPLATE.md` | PR テンプレート                    |
+| `.github/copilot-instructions.md`  | GitHub Copilot 向け組織共通指示     |
 
 ## Issue テンプレート一覧
 
