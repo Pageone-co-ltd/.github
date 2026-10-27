@@ -1,0 +1,105 @@
+name: "[VERIFY] 検証依頼"
+description: 検証チームへの検証依頼（修正確認・新機能の受け入れ・設定照合）
+title: "[VERIFY] "
+labels: [verify]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        検証チームへの依頼です。**必須欄が空のままでは起票できません。**
+        検証チームが探すのは「動いたこと」ではなく、壊れる箇所・仕様と画面のずれ・確認漏れです。
+        運用ルール: internal-docs-musubix「10.Guides/40_検証チーム運用ルール.md」
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 検証の種類
+      options:
+        - 修正確認（直ったか・別の箇所が壊れていないか）
+        - 新機能の受け入れ（仕様どおりに動くか）
+        - 設定照合（パラメータシートと実機の値が一致するか）
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 検証の目的
+      description: 何を確かめてほしいか。特に影響が出そうな箇所があれば書く
+      placeholder: |
+        1. 直したはずの不具合が、本当に直っているかを確かめる
+        2. 直したことで、別の箇所が壊れていないかを見つける（特に〇〇への影響）
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: 対象
+      description: 対象の Issue・PR、変更した箇所。設定照合の場合は対象のパラメータシート
+      placeholder: |
+        | Issue | 内容 | PR |
+        |---|---|---|
+        | #000 | 〇〇すると〇〇になる | #000 |
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 対象環境
+      description: 本番では検証しない。staging・検証用テナントなど
+      placeholder: staging（社内環境）。YYYY-MM-DD に反映済み
+    validations:
+      required: true
+  - type: textarea
+    id: devtest
+    attributes:
+      label: 開発側で済ませたテスト
+      description: 何を確かめ済みで、何が未確認か。検証チームは未確認の範囲に集中する
+      placeholder: |
+        確認済み: 単体テスト、自動の画面テスト
+        未確認: 人による画面操作、スマートフォンでの表示
+    validations:
+      required: true
+  - type: input
+    id: procedure
+    attributes:
+      label: 手順書・照合シート
+      description: 確認手順書（アプリ）または設定照合シート（基盤）のパスかURL
+      placeholder: docs/〇〇_確認手順書_YYYYMMDD.md
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 期限
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: 何がそろえば「検証完了」とするか。既定値から変える場合は書き換える
+      value: |
+        - [ ] 重大度「高」の未解決が0件
+        - [ ] 重大度「中」は回避策を記録してある
+        - [ ] 依頼した手順の実施率が100%、または未実施の理由を依頼者と合意済み
+    validations:
+      required: true
+  - type: textarea
+    id: assign
+    attributes:
+      label: 担当・端末の希望
+      description: 任意。割り振りは検証チームのリーダーが決める
+      placeholder: 確認1はPCとスマートフォンの両方で、など
+  - type: textarea
+    id: notes
+    attributes:
+      label: 注意事項
+      description: 任意。押してはいけないボタン、待ち時間、既知の問題など
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **検証チームの方へ（結果の報告）**
+        担当箇所が終わったら、この Issue にコメントで報告してください。
+        実施した範囲／端末（機種・ブラウザ）／期待どおりだった手順／期待と違った手順（起票した Issue 番号）／**実施できなかった手順と理由**／かかった時間
+        不具合は「バグ報告・誤記修正」で起票し、本文に「関連: #この Issue の番号」を書いてください。
